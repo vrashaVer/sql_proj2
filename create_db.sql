@@ -1,4 +1,4 @@
-CREATE TABLE products (
+CREATE TABLE IF NOT EXISTS products (
     product_id INTEGER PRIMARY KEY,
     name TEXT NOT NULL,
     category TEXT NOT NULL,
@@ -6,14 +6,14 @@ CREATE TABLE products (
 );
 
 
-CREATE TABLE customers ( customer_id INTEGER PRIMARY KEY, 
+CREATE TABLE IF NOT EXISTS customers ( customer_id INTEGER PRIMARY KEY, 
     first_name TEXT NOT NULL, 
     last_name TEXT NOT NULL,
     email TEXT NOT NULL UNIQUE 
 );
 
 
-CREATE TABLE orders ( order_id INTEGER PRIMARY KEY, 
+CREATE TABLE IF NOT EXISTS orders ( order_id INTEGER PRIMARY KEY, 
     customer_id INTEGER NOT NULL, 
     product_id INTEGER NOT NULL, 
     quantity INTEGER NOT NULL, 
